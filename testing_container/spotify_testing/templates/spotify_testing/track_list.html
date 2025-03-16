@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Tracks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            text-align: center;
+        }
+        .track-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+        .track {
+            border-bottom: 1px solid #333;
+            padding: 10px;
+        }
+        .track a {
+            color: #1DB954;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="track-container">
+        <h1>Your Saved Tracks</h1>
+        {% if items %}
+            {% for item in items %}
+                <div class="track">
+                    <h3>
+                        <a href="{{ item.track.external_urls.spotify }}" target="_blank">
+                            {{ item.track.name }}
+                        </a>
+                    </h3>
+                    <p>by 
+                        {% for artist in item.track.artists %}
+                            <a href="{{ artist.external_urls.spotify }}" target="_blank">
+                                {{ artist.name }}
+                            </a>{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No saved tracks found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
