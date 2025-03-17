@@ -1,0 +1,27 @@
+{% extends "spotify_testing/base.html" %}
+
+{% block heading %} 
+    <header class="site_name">App Name</header>
+{% endblock %}
+
+{% block content %}
+<body>
+    <div class="feed-container">
+        {% for playlist in playlists %}
+            <div class="playlist-container">
+                <div class="v1_124"></div>
+                <img class = "playlist-image" src= "{{playlist.image}}">
+                <a class = "playlist-name"> {{ playlist.name }} </a>
+                <a class = "playlist-user"> {{ playlist.user }} </a>
+                <a class = "playlist-likes"> {{ playlist.likes }} </a>
+        {% endfor %}
+    </div>
+
+    <div class="create-playlist-container">
+        <button id="create-playlist-button">Create New Playlist</button>
+    </div>
+</body>
+{% endblock %}
+
+
+
