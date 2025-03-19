@@ -1,10 +1,77 @@
 {% extends "spotify_testing/base.html" %}
+{% load static %}
 
 {% block heading %} 
     <header class="site_name">App Name</header>
 {% endblock %}
 
 {% block content %}
+    <div class="feed-container">
+        <div class="playlist-container">
+            <div class="v1_124"></div>
+            <img class="playlist-image" src="{% static '/beatles.png' %}" alt="Beatles Album Cover">
+            <a class="playlist-name">From Me to You - Mono / Remastered</a>
+            <a class="playlist-user">The Beatles</a>
+            <a class="playlist-likes">5</a>
+        </div>
+    
+
+        <div class="playlist-container">
+            <div class="v1_124"></div>
+            <img class="playlist-image" src="{% static '/beatles.png' %}" alt="Beatles Album Cover">
+            <a class="playlist-name">From Me to You - Mono / Remastered</a>
+            <a class="playlist-user">The Beatles</a>
+            <a class="playlist-likes">5</a>
+        </div>
+
+        <div class="playlist-container">
+            <div class="v1_124"></div>
+            <img class="playlist-image" src="{% static '/beatles.png' %}" alt="Beatles Album Cover">
+            <a class="playlist-name">From Me to You - Mono / Remastered</a>
+            <a class="playlist-user">The Beatles</a>
+            <a class="playlist-likes">5</a>
+        </div>
+
+        <div class="playlist-container">
+            <div class="v1_124"></div>
+            <img class="playlist-image" src="{% static '/beatles.png' %}" alt="Beatles Album Cover">
+            <a class="playlist-name">From Me to You - Mono / Remastered</a>
+            <a class="playlist-user">The Beatles</a>
+            <a class="playlist-likes">5</a>
+        </div>
+
+        <div class="playlist-container">
+            <div class="v1_124"></div>
+            <img class="playlist-image" src="{% static '/beatles.png' %}" alt="Beatles Album Cover">
+            <a class="playlist-name">From Me to You - Mono / Remastered</a>
+            <a class="playlist-user">The Beatles</a>
+            <a class="playlist-likes">5</a>
+        </div>
+
+        <div class="playlist-container">
+            <div class="v1_124"></div>
+            <img class="playlist-image" src="{% static '/beatles.png' %}" alt="Beatles Album Cover">
+            <a class="playlist-name">From Me to You - Mono / Remastered</a>
+            <a class="playlist-user">The Beatles</a>
+            <a class="playlist-likes">5</a>
+        </div>
+
+        <div class="playlist-container">
+            <div class="v1_124"></div>
+            <img class="playlist-image" src="{% static '/beatles.png' %}" alt="Beatles Album Cover">
+            <a class="playlist-name">From Me to You - Mono / Remastered</a>
+            <a class="playlist-user">The Beatles</a>
+            <a class="playlist-likes">5</a>
+        </div>
+    
+    </div>
+
+    <div class="create-playlist-container">
+        <button id="create-playlist-button">Create New Playlist</button>
+    </div>
+{% endblock %}
+
+{#
 <body>
     <div class="feed-container">
         {% for playlist in playlists %}
@@ -21,7 +88,5 @@
         <button id="create-playlist-button">Create New Playlist</button>
     </div>
 </body>
-{% endblock %}
-
-
+#}
 

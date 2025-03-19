@@ -75,4 +75,5 @@ def get_saved_tracks(request,token_data):
     else:
         return JsonResponse({"error": "Failed to fetch access token"}, status=400)
 
-    
+def home(request):
+    return render(request, 'spotify_testing/home.html', {})
