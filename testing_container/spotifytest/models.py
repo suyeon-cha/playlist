@@ -1,19 +1,23 @@
-# from django.db import models
-# from django.contrib.auth.models import AbstractUser
-# from django.utils import timezone
-# import uuid
+from django.db import models
+from django.contrib.auth.models import AbstractUser
+from django.utils import timezone
+import uuid
 
 
-# class User(AbstractUser):
-#     """
-#     Extended User model for storing Spotify-related information
-#     """
-#     spotify_token = models.CharField(max_length=255, blank=True, null=True)
-#     friends = models.ManyToManyField('self', symmetrical=True, blank=True)
-#     liked_playlists = models.ManyToManyField('Playlist', related_name='liked_by', blank=True)
+class User(AbstractUser):
+    """
+    Extended User model for storing Spotify-related information
+    """
+    spotify_user_id = models.CharField(primary_key=True,max_length=255, blank=True, null=False)
+    auth_token = models.CharField(max_length=255, blank=True, null=True)
+    last_auth_time = models.DateTimeField(default=timezone.now)
+    refresh_token = models.CharField(max_length=255, blank=True, null=True)
+    
+    # friends = models.ManyToManyField('self', symmetrical=True, blank=True)
+    # liked_playlists = models.ManyToManyField('Playlist', related_name='liked_by', blank=True)
 
-#     def __str__(self):
-#         return self.username
+    def __str__(self):
+        return self.spotify_user_id
 
 
 # class Song(models.Model):

@@ -5,6 +5,13 @@
     font-family: 'Inter', sans-serif;
 }
 
+.site_name {
+    text-align: center;
+    font-size: 80px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
 body {
     background-color: #202020; 
     color: white;
@@ -15,7 +22,6 @@ body {
     overflow-x: auto; /* Enables horizontal scrolling */
     gap: 20px;
     padding: 40px 20px;
-    white-space: nowrap;
     scrollbar-width: thick;
     scrollbar-color: #390099 transparent; 
 }
@@ -43,12 +49,7 @@ body {
     font-size: 25px;
     font-weight: bold;
     color: white;
-    text-decoration: none;
     text-align: center; 
-    word-wrap: break-word; 
-    overflow-wrap: break-word;
-    display: block;
-    max-width: 100%;
     white-space: normal; 
 }
 
@@ -65,20 +66,15 @@ body {
     align-items: center;
 }
 
-.site_name {
-    text-align: center;
-    font-size: 80px;
-    font-weight: bold;
-    margin-top: 30px;
-}
-
-.create-playlist-container {
+.create-playlist-container,
+.open-playlist-container {
     display: flex;
     justify-content: center; 
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
-#create-playlist-button {
+#create-playlist-button, 
+#open-playlist-button {
     color: white;
     border: none;
     padding: 20px 40px;
@@ -86,6 +82,5 @@ body {
     font-weight: bold;
     border-radius: 12px;
     cursor: pointer;
-    text-align: center;
     background: #390099;
 }
