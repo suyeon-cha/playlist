@@ -1,0 +1,42 @@
+{% extends "spotify_testing/base.html" %}
+{% load static %}
+
+{% block heading %} 
+    <header class="site_name">App Name</header>
+{% endblock %}
+
+{% block content %}
+    <a id = "playlist-creation-text">Playlist Creation Completed</a>
+    <div class="playlist-created-container">
+        <div class="playlist-info-container">
+            <img class="creation-playlist-image" src="{% static '/beatles.png' %}" alt="Beatles Album Cover">
+            <a class="creation-playlist-name">From Me to You - Mono / Remastered</a>
+            <a class="creation-playlist-user">The Beatles</a>
+        </div>
+
+        <div class="playlist-song-container">
+
+            {% for item in items %}
+                <div class = "song-information" data-uri="{{ item.track.uri }}"> 
+                    <img class="song-image" src="{{ item.track.album.images.0.url}}" alt="{{ item.track.name }} album cover">
+                    <div class = "creation-playlist-song-info">
+                        <a class="song-name">{{ item.track.name }}</a>
+                        {% for artist in item.track.artists %}
+                            <a class="song-artist">{{ artist.name }}</a>
+                        {% endfor %}
+                    </div>
+                    <a class="x-button">x</a>
+                </div>
+            {% endfor %} 
+        </div>   
+    </div>
+
+    <div class="open-playlist-container">
+        {% csrf_token %}
+        <button id="open-playlist-button">Open In Spotify</button>
+    </div>
+
+    <script src="{% static 'spotify_testing/base.js' %}"></script>
+
+{% endblock %}
+
