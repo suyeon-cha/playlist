@@ -163,7 +163,8 @@ def user_profile(request):
 def home(request):
     return render(request, 'spotify_testing/home.html', {})
 
-    
+def create_playlist(request):
+    return render(request, 'spotify_testing/create_playlist.html', {})   
 
 @login_required
 def create_spotify_playlist(request):

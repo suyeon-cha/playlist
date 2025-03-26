@@ -1,16 +1,23 @@
 {% extends "spotify_testing/base.html" %}
+{% load static %}
 
 {% block heading %}
     <header class="site_name">App Name</header> 
 {% endblock %}
 
-
 {% block content %}    
     <div class="information-container">
-        <h1>Playlist Information</h1>
-        <img class="cover-image" src="{% static '/beatles.png' %}" alt="Beatles Album Cover">
-        <p>Playlist length: {{ playlist.id }}</p>
-        <p>Playlist Description: {{ playlist.description }}</p>
-        
+        <h1 id="playlist_info">Playlist Information</h1>
+        <img class="cover-image" src="{% static 'beatles.png' %}" alt="Beatles Album Cover">
+
+        <div class="playlist-fields">
+            <label for="playlist_length">Playlist length:</label>
+            <input id="playlist_length" type="text" value="{{ playlist.length|default:'--:--' }}">
+
+            <label for="playlist_description">Playlist Description:</label>
+            <input id="playlist_description" type="text" value="{{ playlist.description|default:'No description' }}">
+        </div>
+        <a id="create-playlist-button" href="{% url 'song-selection' %}">Complete Set Up</a>
     </div>
+    
 {% endblock %}

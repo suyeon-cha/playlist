@@ -61,7 +61,7 @@
     </div>
 
     <div class="create-playlist-container">
-        <a id="create-playlist-button" href="{% url 'song-selection' %}">Create New Playlist</a>
+        <a id="create-playlist-button" href="{% url 'create_playlist' %}">Create New Playlist</a>
     </div>
 {% endblock %}
 
@@ -79,6 +79,7 @@
     </div>
 
     <div class="create-playlist-container">
+        <a id="create-playlist-button" href="{% url 'song-selection' %}">Create New Playlist</a>
         <button id="create-playlist-button">Create New Playlist</button>
     </div>
 </body>
