@@ -1,0 +1,35 @@
+{% extends "spotify_testing/base.html" %}
+{% load static %}
+
+{% block heading %} 
+    <header class="site_name">App Name</header>
+{% endblock %}
+
+{% block content %}
+    <div class = "playlist-addSongs-header">
+        <button class = "tab-button" id = "playlist-information-button" >Playlist Information</button>
+        <button class = "tab-button" id = "add-songs-button" >Song Selection</button>
+    </div>
+
+    <div class="playlist-creation-container">
+        <div class="added-songs-container">
+            <div class ="added-song-title"> Added Songs</div>
+        </div>
+
+        <div class="search-song-container">
+            <div id = "search-song-bar">Search Songs...</div>
+            {% for item in items %}
+                <div class = "song-information"> 
+                    <img class="song-image" src="{{ item.track.album.images.0.url}}" alt="{{ item.track.name }} album cover">
+                    <div class = "creation-playlist-song-info">
+                        <a class="song-name">{{ item.track.name }}</a>
+                        {% for artist in item.track.artists %}
+                            <a class="song-artist">{{ artist.name }}</a>
+                        {% endfor %}
+                    </div>
+                    <a class="+button">+</a>
+                </div>
+            {% endfor %} 
+        </div>   
+    </div>
+{% endblock %}

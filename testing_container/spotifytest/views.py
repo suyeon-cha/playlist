@@ -109,6 +109,33 @@ def spotify_callback(request):
     
     else:
         return JsonResponse({"error": "Failed to fetch access token"}, status=400)
+
+def home(request):
+    return render(request, 'spotify_testing/home.html', {})
+
+@login_required
+def playlist_complete(request):
+    access_token = request.user.auth_token
+
+    if not access_token:
+        return JsonResponse({"error": "User not authenticated"}, status=401)
+
+    print(access_token)
+
+    url = "https://api.spotify.com/v1/me/tracks"
+    headers = {
+        "Authorization": f"Bearer {access_token}",
+        "Content-Type": "application/json"
+    }
+
+    response = requests.get(url, headers=headers)
+    print(response)
+    data = response.json()
+
+    if "items" in data:
+        return render(request, 'spotify_testing/playlist_complete.html', data)
+    else:
+        return JsonResponse({"error": "Failed to fetch access token"}, status=400)
     
 def create_spotify_playlist(request, track_ids, playlist_name, collaborator_ids=None, description=""):
     """
@@ -293,33 +320,6 @@ def add_collaborators_to_playlist(request, playlist_id, collaborator_ids):
         "message": f"Added {len(collaborator_ids)} collaborators to playlist",
         "collaborators": results
     })
-
-def home(request):
-    return render(request, 'spotify_testing/home.html', {})
-
-@login_required
-def playlist_complete(request):
-    access_token = request.user.auth_token
-
-    if not access_token:
-        return JsonResponse({"error": "User not authenticated"}, status=401)
-
-    print(access_token)
-
-    url = "https://api.spotify.com/v1/me/tracks"
-    headers = {
-        "Authorization": f"Bearer {access_token}",
-        "Content-Type": "application/json"
-    }
-
-    response = requests.get(url, headers=headers)
-    print(response)
-    data = response.json()
-
-    if "items" in data:
-        return render(request, 'spotify_testing/playlist_complete.html', data)
-    else:
-        return JsonResponse({"error": "Failed to fetch access token"}, status=400)
 
 def user_profile(request):
     return render(request, 'spotify_testing/user_profile.html', {})
