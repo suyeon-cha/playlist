@@ -18,12 +18,6 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.spotify_user_id
-    spotify_token = models.CharField(max_length=255, blank=True, null=True)
-    friends = models.ManyToManyField('self', symmetrical=True, blank=True)
-    liked_playlists = models.ManyToManyField('Playlist', related_name='liked_by', blank=True)
-
-    def __str__(self):
-        return self.username
 
 class Song(models.Model):
     """

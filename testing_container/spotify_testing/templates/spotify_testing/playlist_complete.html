@@ -17,7 +17,7 @@
         <div class="playlist-song-container">
 
             {% for item in items %}
-                <div class = "song-information"> 
+                <div class = "song-information" data-uri="{{ item.track.uri }}"> 
                     <img class="song-image" src="{{ item.track.album.images.0.url}}" alt="{{ item.track.name }} album cover">
                     <div class = "creation-playlist-song-info">
                         <a class="song-name">{{ item.track.name }}</a>
@@ -32,6 +32,11 @@
     </div>
 
     <div class="open-playlist-container">
+        {% csrf_token %}
         <button id="open-playlist-button">Open In Spotify</button>
     </div>
+
+    <script src="{% static 'spotify_testing/base.js' %}"></script>
+
 {% endblock %}
+
