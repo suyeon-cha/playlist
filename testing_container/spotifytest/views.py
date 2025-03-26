@@ -133,7 +133,29 @@ def playlist_complete(request):
         return render(request, 'spotify_testing/playlist_complete.html', data)
     else:
         return JsonResponse({"error": "Failed to fetch access token"}, status=400)
-    
+
+def song_selection(request):
+    access_token = request.user.auth_token
+
+    if not access_token:
+        return JsonResponse({"error": "User not authenticated"}, status=401)
+
+    print(access_token)
+
+    url = "https://api.spotify.com/v1/me/tracks"
+    headers = {
+        "Authorization": f"Bearer {access_token}",
+        "Content-Type": "application/json"
+    }
+
+    response = requests.get(url, headers=headers)
+    print(response)
+    data = response.json()
+
+    if "items" in data:
+        return render(request, 'spotify_testing/song_selection.html', data)
+    else:
+        return JsonResponse({"error": "Failed to fetch access token"}, status=400)
 
 def user_profile(request):
     return render(request, 'spotify_testing/user_profile.html', {})
@@ -141,6 +163,7 @@ def user_profile(request):
 def home(request):
     return render(request, 'spotify_testing/home.html', {})
 
+    
 
 @login_required
 def create_spotify_playlist(request):
