@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 from configparser import ConfigParser
+
+AUTH_USER_MODEL = 'spotifytest.User'
+
 CONFIG = ConfigParser()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -114,6 +117,8 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 
 USE_TZ = True
+
+
 
 
 # Static files (CSS, JavaScript, Images)

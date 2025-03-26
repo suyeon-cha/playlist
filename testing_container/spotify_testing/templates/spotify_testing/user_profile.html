@@ -1,0 +1,46 @@
+{% extends "spotify_testing/base.html" %}
+{% load static %}
+
+{% block heading %} 
+    <header class="site_name">App Name</header>
+{% endblock %}
+
+{% block content %}
+    <div class="profile-container">
+        <div class = "profile-user-info">
+            <img class="profile-user-picture" src="{% static '/beatles.png' %}" alt="profile-picture">
+            <a class="profile-user-name">Username</a>
+            <a class="profile-user-spotify-name">@spotify username</a>
+        </div>
+
+        <div class = "profile-playlists-info">
+            <h2 class = "profile-playlist-type-names">Created Playlist</h2>
+
+            <div class ="profile-created-playlist">
+                <!-- {% for item in items %}
+                    <div class="profile-playlist-container">
+                        <img class="profile-playlist-image" src="{% static '/beatles.png' %}" alt="Beatles Album Cover">
+                        <a class="profile-playlist-name" href="{{ item.track.external_urls.spotify }}" target="_blank"> {{ item.track.name }}</a>
+                        {% for artist in item.track.artists %}
+                            <a  class="profile-playlist-user" href="{{ artist.external_urls.spotify }}" target="_blank">
+                                {{ artist.name }}
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% endfor %} -->
+                <!-- {% for album in albums %}
+                    <div style="width: 200px; text-align: center;">
+                    <img src="{{ album.image }}" alt="{{ album.name }}" style="width: 100%; border-radius: 10px;">
+                    <p><strong>{{ album.name }}</strong></p>
+                    <p style="color: #ccc;">{{ album.artist }}</p>
+                    </div>
+                {% endfor %} -->
+            </div>
+            <h2 class = "profile-playlist-type-names">Liked Playlist</h2>
+            <div class ="profile-liked-playlist"></div>
+            <h2 class = "profile-playlist-type-names">Collaborator Playlist</h2>
+            <div class ="profile-collaborator-playlist"></div>
+        </div>
+    </div>
+{% endblock %}
+

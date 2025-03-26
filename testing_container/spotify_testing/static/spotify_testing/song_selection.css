@@ -1,0 +1,95 @@
+.playlist-addSongs-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.playlist-addSongs-header {
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-bottom:  5px;
+}
+
+.tab-button {
+    padding: 12px 30px;
+    border: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 60vh;
+}
+
+#playlist-information-button {
+    background-color: #f4c542;
+    color: white;
+}
+
+#add-songs-button {
+    background-color: #4a1cc2;
+    color: white;
+}
+
+.playlist-creation-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 40px;
+}
+
+.added-songs-container {
+    background-color: #330d99;
+    padding: 20px;
+    border-radius: 15px;
+    width: 40%;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.added-song-title {
+    font-size: 2rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.search-song-container {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 15px;
+    width: 40%;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+#search-song-bar {
+    background-color: #555;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.song-information {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+Buttons
+.+button,
+.song-information .+button,
+.song-information .remove-button {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+
