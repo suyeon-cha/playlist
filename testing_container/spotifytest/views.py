@@ -134,6 +134,7 @@ def playlist_complete(request):
     else:
         return JsonResponse({"error": "Failed to fetch access token"}, status=400)
 
+@login_required
 def song_selection(request):
     access_token = request.user.auth_token
 
