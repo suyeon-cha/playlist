@@ -1,0 +1,22 @@
+.vote-button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  #vote-button {
+    background-color: #f4b63d;
+    border: none;
+    border-radius: 16px;
+    padding: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    width: 60px;
+    height: 60px;
+  }
+  
+  #vote-button:hover {
+    transform: scale(1.1);
+  }

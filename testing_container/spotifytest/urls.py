@@ -9,6 +9,7 @@ urlpatterns = [
     # path('', views.track_list, name='track-list'),
     path('song-selection/', views.song_selection, name='song-selection'),
     path('home/', views.home, name='home'),
+    path('vote/', views.vote, name='vote'),
     path('callback/', views.spotify_callback, name='spotify-callback'),
     path("create_spotify_playlist/", views.create_spotify_playlist, name="create_spotify_playlist"),
 ]

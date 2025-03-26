@@ -1,0 +1,28 @@
+{% extends "spotify_testing/base.html" %}
+{% load static %}
+
+{% block heading %} 
+    <a class="site_name" href="{% url 'home' %}">App Name</a>
+{% endblock %}
+
+{% block content %}
+    <div class="playlist-created-container">
+        <div class="playlist-info-container">
+            <img class="creation-playlist-image" src="{% static '/beatles.png' %}" alt="Beatles Album Cover">
+            <a class="creation-playlist-name">From Me to You - Mono / Remastered</a>
+            <a class="creation-playlist-user">The Beatles</a>
+        </div>
+    </div>
+
+    <div class="vote-button-container">
+        {% csrf_token %}
+        <button id="vote-button">🙁</button>
+        <button id="vote-button">🤔</button>
+        <button id="vote-button">🥳</button>
+    </div>
+
+    <div class="create-playlist-container">
+        <a id="create-playlist-button" href="{% url 'playlist-complete' %}">Next</a>
+    </div>
+
+{% endblock %}

@@ -167,6 +167,9 @@ def home(request):
 def create_playlist(request):
     return render(request, 'spotify_testing/create_playlist.html', {})   
 
+def vote(request):
+    return render(request, 'spotify_testing/vote.html', {})   
+
 @login_required
 def create_spotify_playlist(request):
     if request.method != "POST":
