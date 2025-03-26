@@ -2,7 +2,8 @@
 {% load static %}
 
 {% block heading %}
-    <header class="site_name">App Name</header> 
+    <a class="site_name" href="{% url 'home' %}">App Name</a>
+    <a id="profile_link" href="{% url 'user-profile' %}">Profile</a>
 {% endblock %}
 
 {% block content %}    
