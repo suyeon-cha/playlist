@@ -1,0 +1,16 @@
+{% extends "spotify_testing/base.html" %}
+
+{% block heading %}
+    <header class="site_name">App Name</header> 
+{% endblock %}
+
+
+{% block content %}    
+    <div class="information-container">
+        <h1>Playlist Information</h1>
+        <img class="cover-image" src="{% static '/beatles.png' %}" alt="Beatles Album Cover">
+        <p>Playlist length: {{ playlist.id }}</p>
+        <p>Playlist Description: {{ playlist.description }}</p>
+        
+    </div>
+{% endblock %}
